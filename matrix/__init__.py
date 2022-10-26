@@ -44,7 +44,12 @@ class Matrix2x2(Matrix):
             return matrix_multiply_2x1(self, other)
         elif isinstance(other, Number):
             d = self.data
-            data = [d[0][0] * other, d[0][1] * other, d[1][0] * other, d[1][1] * other]
+            data = [
+                d[0][0] * other,
+                d[0][1] * other,
+                d[1][0] * other,
+                d[1][1] * other,
+            ]
             return Matrix2x2.from_iterable(data)
 
     @classmethod
