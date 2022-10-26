@@ -1,4 +1,5 @@
 import pytest
+
 from matrix import Matrix3x3
 
 

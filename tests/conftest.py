@@ -1,5 +1,6 @@
-from matrix import Matrix3x3, Matrix2x2
 from pytest import fixture
+
+from matrix import Matrix2x2, Matrix3x3
 
 
 @fixture

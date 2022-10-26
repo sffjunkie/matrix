@@ -1,6 +1,7 @@
-from typing_extensions import Self
 import collections.abc
 from numbers import Number
+
+from typing_extensions import Self
 
 
 class Matrix:
