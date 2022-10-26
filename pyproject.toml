@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "matrix"
+version = "0.1.0"
+description = ""
+authors = ["Simon Kennedy <sffjunkie+code@gmail.com>"]
+readme = "ReadMe.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typing-extensions = "^4.4.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
