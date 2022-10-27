@@ -60,7 +60,7 @@ class Matrix3x3(Matrix):
         d = self.data[:]
         d[1][0], d[0][1] = d[0][1], d[1][0]
         d[2][0], d[0][2] = d[0][2], d[2][0]
-        d[2][1], d[1][2] = d[2][1], d[1][2]
+        d[2][1], d[1][2] = d[1][2], d[2][1]
         data = [item for sublist in d for item in sublist]
         return Matrix3x3.from_iterable(data)
 
