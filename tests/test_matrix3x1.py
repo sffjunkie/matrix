@@ -16,6 +16,11 @@ def test_3x1_repr():
     assert r == "Matrix3x1 = (0.0, 0.0, 0.0)"
 
 
+def test_3x1_rich_repr():
+    r = tuple(Matrix3x1().__rich_repr__())
+    assert r == ("Matrix3x1", ("data", (0.0, 0.0, 0.0)))
+
+
 def test_matrix3x1_from_list():
     data = [1.0, 2.0, 3.0]
 

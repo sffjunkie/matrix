@@ -13,6 +13,14 @@ def test_3x3_repr():
     assert r == "Matrix3x3 = ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0))"
 
 
+def test_3x3_rich_repr():
+    r = tuple(Matrix3x3().__rich_repr__())
+    assert r == (
+        "Matrix3x3",
+        ("data", ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0))),
+    )
+
+
 def test_3x3_from_iterable():
     m = Matrix3x3.from_iterable([1, 2, -1, 2, 1, 2, -1, 2, 1])
     assert m[1][1] == 1

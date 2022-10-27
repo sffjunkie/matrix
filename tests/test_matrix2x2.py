@@ -13,6 +13,11 @@ def test_2x2_repr():
     assert r == "Matrix2x2 = ((1.0, 0.0), (0.0, 1.0))"
 
 
+def test_2x1_rich_repr():
+    r = tuple(Matrix2x2().__rich_repr__())
+    assert r == ("Matrix2x2", ("data", ((1.0, 0.0), (0.0, 1.0))))
+
+
 def test_2x2_from_iterable_float():
     data = (1.0, 2.0, 3.0, 4.0)
 
