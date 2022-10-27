@@ -12,6 +12,11 @@ def test_1x2_empty():
     assert m[1] == 0.0
 
 
+def test_1x2_repr():
+    r = repr(Matrix1x2())
+    assert r == "Matrix1x2 = (0.0, 0.0)"
+
+
 def test_1x2_from_list():
     data = [1.0, 2.0]
 
@@ -68,6 +73,11 @@ def test_1x3_empty():
     assert m[0] == 0.0
     assert m[1] == 0.0
     assert m[2] == 0.0
+
+
+def test_1x3_repr():
+    r = repr(Matrix1x3())
+    assert r == "Matrix1x3 = (0.0, 0.0, 0.0)"
 
 
 def test_1x3_from_list():

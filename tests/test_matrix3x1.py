@@ -11,6 +11,11 @@ def test_matrix3x1_empty():
     assert m[2] == 0.0
 
 
+def test_3x1_repr():
+    r = repr(Matrix3x1())
+    assert r == "Matrix3x1 = (0.0, 0.0, 0.0)"
+
+
 def test_matrix3x1_from_list():
     data = [1.0, 2.0, 3.0]
 

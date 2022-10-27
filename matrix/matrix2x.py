@@ -4,8 +4,10 @@ from typing import Any
 
 from typing_extensions import Self
 
+from .base import Matrix
 
-class Matrix2x1:
+
+class Matrix2x1(Matrix):
     size = (2, 1)
 
     def __init__(
@@ -27,20 +29,12 @@ class Matrix2x1:
         else:
             raise TypeError(f"Unable to multiply matrix by type {type(other)}")
 
-    def __eq__(self, other: Any):
-        if isinstance(other, Matrix2x1):
-            return self.data == other.data
-        else:
-            raise TypeError(
-                f"Unable to compare {self.__class__.__name__} to {type(other)}"
-            )
-
     @classmethod
     def from_iterable(cls, data: Iterable[Number]):
         return cls(data)
 
 
-class Matrix2x2:
+class Matrix2x2(Matrix):
     size = (2, 2)
 
     def __init__(
@@ -71,14 +65,6 @@ class Matrix2x2:
                 d[1][1] * other,
             )
             return Matrix2x2.from_iterable(data)
-
-    def __eq__(self, other: Any):
-        if isinstance(other, Matrix2x2):
-            return self.data == other.data
-        else:
-            raise TypeError(
-                f"Unable to compare {self.__class__.__name__} to {type(other)}"
-            )
 
     @classmethod
     def from_iterable(

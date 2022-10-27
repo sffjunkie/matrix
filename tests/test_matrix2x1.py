@@ -10,6 +10,11 @@ def test_2x1_empty():
     assert m[1] == 0.0
 
 
+def test_2x1_repr():
+    r = repr(Matrix2x1())
+    assert r == "Matrix2x1 = (0.0, 0.0)"
+
+
 def test_2x1_from_list():
     data = [1.0, 2.0]
 

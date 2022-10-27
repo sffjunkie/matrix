@@ -4,11 +4,12 @@ from typing import Any
 
 from typing_extensions import Self
 
-from matrix.matrix2x import Matrix2x1
-from matrix.matrix3x import Matrix3x1
+from .base import Matrix
+from .matrix2x import Matrix2x1
+from .matrix3x import Matrix3x1
 
 
-class Matrix1x2:
+class Matrix1x2(Matrix):
     size = (1, 2)
 
     def __init__(
@@ -33,20 +34,20 @@ class Matrix1x2:
         else:
             raise TypeError(f"Unable to multiply matrix by type {type(other)}")
 
-    def __eq__(self, other: Any):
-        if isinstance(other, Matrix1x2):
-            return self.data == other.data
-        else:
-            raise TypeError(
-                f"Unable to compare {self.__class__.__name__} to {type(other)}"
-            )
+    # def __eq__(self, other: Any):
+    #     if isinstance(other, Matrix1x2):
+    #         return self.data == other.data
+    #     else:
+    #         raise TypeError(
+    #             f"Unable to compare {self.__class__.__name__} to {type(other)}"
+    #         )
 
     @classmethod
     def from_iterable(cls, data: Iterable[Number]):
         return cls(data)
 
 
-class Matrix1x3:
+class Matrix1x3(Matrix):
     size = (1, 3)
 
     def __init__(
@@ -74,14 +75,6 @@ class Matrix1x3:
             return value
         else:
             raise TypeError(f"Unable to multiply matrix by type {type(other)}")
-
-    def __eq__(self, other: Any):
-        if isinstance(other, Matrix1x3):
-            return self.data == other.data
-        else:
-            raise TypeError(
-                f"Unable to compare {self.__class__.__name__} to {type(other)}"
-            )
 
     @classmethod
     def from_iterable(cls, data: Iterable[Number]):

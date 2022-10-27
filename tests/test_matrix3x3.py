@@ -8,6 +8,11 @@ def test_3x3_empty():
     assert m.data == ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0))
 
 
+def test_3x3_repr():
+    r = repr(Matrix3x3())
+    assert r == "Matrix3x3 = ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, 0.0))"
+
+
 def test_3x3_from_iterable():
     m = Matrix3x3.from_iterable([1, 2, -1, 2, 1, 2, -1, 2, 1])
     assert m[1][1] == 1

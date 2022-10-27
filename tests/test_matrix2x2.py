@@ -8,6 +8,11 @@ def test_2x2_empty():
     assert m.data == ((1.0, 0.0), (0.0, 1.0))
 
 
+def test_2x2_repr():
+    r = repr(Matrix2x2())
+    assert r == "Matrix2x2 = ((1.0, 0.0), (0.0, 1.0))"
+
+
 def test_2x2_from_iterable_float():
     data = (1.0, 2.0, 3.0, 4.0)
 
