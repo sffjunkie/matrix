@@ -22,3 +22,12 @@ def test_matrix3x3_adjoint(matrix_3x3):
 def test_matrix3x3_inverse(matrix_3x3):
     inverse = matrix_3x3.inverse()
     assert inverse[0][0] == pytest.approx(3.0 / 16.0)
+
+
+def test_matrix3x3_transpose(matrix_3x3_1):
+    m = matrix_3x3_1.transpose()
+    assert m.data == [
+        [1, 4, 7],
+        [2, 5, 8],
+        [3, 6, 9],
+    ]
